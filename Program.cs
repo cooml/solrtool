@@ -15,8 +15,6 @@ namespace solrtool
             var toUrl = ConfigurationManager.AppSettings.Get("toUrl");
             var sort = ConfigurationManager.AppSettings.Get("sort");
             var fq = ConfigurationManager.AppSettings.Get("fq");
-
-
             LogHelper.LogInfo("start");
             LogHelper.LogInfo("from url:" + fromUrl);
             LogHelper.LogInfo("to url:+" + toUrl);
