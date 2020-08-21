@@ -46,8 +46,9 @@ namespace solrtool
       HttpWebRequest oRequest = null;
       try
       {
-
-        oRequest = (HttpWebRequest)WebRequest.Create(baseUrl + "/select?q=" + q + fqString + sortString + rowsString+ startString);
+        var queryUrl=baseUrl + "/select?q=" + q + fqString + sortString + rowsString+ startString;
+        LogHelper.LogInfo(queryUrl);
+        oRequest = (HttpWebRequest)WebRequest.Create(queryUrl);
         oRequest.Method = "GET";
         oRequest.ContentType = "application/json;charset=utf-8";
         HttpWebResponse oResponse = (HttpWebResponse)oRequest.GetResponse();
