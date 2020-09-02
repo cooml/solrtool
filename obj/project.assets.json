@@ -4955,11 +4955,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\solrtool\\solrtool.csproj",
+      "projectUniqueName": "C:\\github\\solrtool\\solrtool.csproj",
       "projectName": "solrtool",
-      "projectPath": "C:\\git\\solrtool\\solrtool.csproj",
+      "projectPath": "C:\\github\\solrtool\\solrtool.csproj",
       "packagesPath": "C:\\Users\\yongsheng\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\solrtool\\obj\\",
+      "outputPath": "C:\\github\\solrtool\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
