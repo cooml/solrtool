@@ -64,3 +64,5 @@ C:\github\solrtool\obj\Debug\netcoreapp3.0\solrtool.AssemblyInfo.cs
 C:\github\solrtool\obj\Debug\netcoreapp3.0\solrtool.csproj.CopyComplete
 C:\github\solrtool\obj\Debug\netcoreapp3.0\solrtool.dll
 C:\github\solrtool\obj\Debug\netcoreapp3.0\solrtool.pdb
+C:\github\solrtool\bin\Debug\netcoreapp3.0\opensearchSuggest_2020-09-02-16-10-15
+C:\github\solrtool\bin\Debug\netcoreapp3.0\solrResponseBinary_2020-08-15-15-38-15
