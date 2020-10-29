@@ -23,6 +23,8 @@ namespace solrtool
       LogHelper.LogInfo("from url:" + fromUrl);
       LogHelper.LogInfo("to local file:result_json.txt");
       LogHelper.LogInfo("to local file:result_binary");
+      LogHelper.LogInfo("to local file:result_json_open.txt");
+      LogHelper.LogInfo("to local file:result_binary_open");
       LogHelper.LogInfo("to local file:result_binary_source");
       var jsonData = SolrHelper.getDataFromSolr(fromUrl, start, rows, fq, sort);
       var resopnseModel = JsonConvert.DeserializeObject<SolrResponseSignal>(jsonData);
