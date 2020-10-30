@@ -83,7 +83,7 @@ namespace solrtool
         System.IO.File.WriteAllText(("result_json_" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt"), JsonConvert.SerializeObject(docFiles, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
 
 
-        List<DocSignalOpensearch> opensearch = docFiles.Select(a => new DocSignalOpensearch()
+        List<DocSignalOpensearch> opensearch = docFiles.Where(b=>(b.params_language_s!=null&&b.params_language_s.Length<4&&b.params_realm_s!=null&&b.params_realm_s.Length<7)).Select(a => new DocSignalOpensearch()
         {
 
           count = a.count_i,
