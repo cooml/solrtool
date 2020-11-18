@@ -1,0 +1,14 @@
+C:\github\solrtool\bin\Debug\netcoreapp2.2\App.config
+C:\github\solrtool\bin\Debug\netcoreapp2.2\log4net.config
+C:\github\solrtool\bin\Debug\netcoreapp2.2\opensearchSuggest_2020-09-02-16-10-15
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrResponseBinary_2020-08-15-15-38-15
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrtool.dll.config
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrtool.deps.json
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrtool.runtimeconfig.json
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrtool.runtimeconfig.dev.json
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrtool.dll
+C:\github\solrtool\bin\Debug\netcoreapp2.2\solrtool.pdb
+C:\github\solrtool\obj\Debug\netcoreapp2.2\solrtool.AssemblyInfoInputs.cache
+C:\github\solrtool\obj\Debug\netcoreapp2.2\solrtool.AssemblyInfo.cs
+C:\github\solrtool\obj\Debug\netcoreapp2.2\solrtool.dll
+C:\github\solrtool\obj\Debug\netcoreapp2.2\solrtool.pdb
