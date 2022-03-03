@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>demo-luo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            /* Firefox */
+            -webkit-box-sizing: border-box;
+            /* Safari */
+        }
+
+        .supporttool {
+            max-width: 990px;
+        }
+
+        .t-support-tool-area {
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+        }
+
+        .supporttool .t-support-tool-area .t-support-tool-area-item {
+            min-width: 200px;
+            width: 20%;
+            border: 1px solid #ccc;
+            color: #333;
+            border-radius: 4px;
+            padding: 0;
+            margin-right: 4%;
+            margin-bottom: 20px;
+            height: 123px;
+        }
+
+        .supporttool .t-support-tool-area .t-support-tool-area-item .t-support-tool-area-item-a {
+            position: relative;
+            display: inline-block;
+            padding: 20px 10px 10px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .supporttool .t-support-tool-area .t-support-tool-area-item .t-support-tool-area-item-a>img {
+            max-width: 40px;
+            max-height: 40px;
+            margin-bottom: 10px;
+            vertical-align: middle;
+        }
+
+        .supporttool .t-support-tool-area .t-support-tool-area-item .t-support-tool-area-item-a p {
+            font-size: 16px;
+            margin: 5px 0;
+            display: block;
+
+            /* 文本居中对齐*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            /* height: 100%; */
+            min-height: 43px;
+        }
+
+        .supporttool .t-support-tool-area .t-support-tool-area-item .t-support-tool-area-item-a span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .supporttool .t-support-tool-area .t-support-tool-area-item .t-support-tool-area-item-a .i {
+            font-size: 16px;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="supporttool">
+        <div class="t-support-tool-area">
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+            <div class="t-support-tool-area-item"><a class="t-support-tool-area-item-a"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR42u3dzU4TYRSA4dPS2kKUQAQTEjaagGHlDXhLxHgRrFzi2sSF7vAWTLyJupLEn7iQBOJPKULBBU7CoiIdSsthnidxa4S+OZ75Ou3UVrY6JwFJ1f0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBwxmNKv2w289exOPVpXj78umV/P2bnZ3Y7OyoygS+Gkd7P7ziAs5pf/uzV1vAeR3ufvdqC1jACNgKgYBNYCoVsBMIAad18PWbV1rA1gcEbAIjYAFTqYCP9qwQAk49gd1gI2DrAwIePycQAjaBEbCAEXAJx70Dr7KA89rf/uJVFrALOAQ8dt7AEHBq3Q9uYhewCYyA7cAIeGhOIARs+iJg+y8CHpITCAGn5i1kAafmJh4BJw/YpzAEnHh9sEII2PqAgAWMgIfkTQwBm8AIeHIBO4EQcFJOIARsfUDAAkbAJfT3rQ8CTszDXAScmjNgAafmYS4Ctj4gYOsDAhYwVggEbAIj4KvnBELA1gcEPAneQhZwam7iEbCAEfDkLuCcQAg49QT2MSIBWx8Q8Ph5A0PAJjACFjACLsEJhICTT2AnEAJ2AYeArQ8IeCge5iJgExgB24ERcAkeJytg0xcB238R8JCcQGACI2A7MAIuwT0QpA3Yw1xIHbB7gBEwAnYBh4BNYKoXsBMIkgbsBILUAVsfEDACnhQnEBQaJvDorK8txPrawo0IY/XNexPYBEbAA3iYC2kD9jAXUgdsfUDACNgKgYBNYKoWsBMI0gZsfSB1wNYHBIyAJ8VdaKQO2DfxkHwC+xgRSQO2PpA6YBdwmMAIWMAIuAQnEAyS5jNxozqB+LT7KzZevfPK/8/0vRT/zNrKVuckw/rw8fnry/2gzUbUpupx3PstzgtY2XhiAo/KZb+FZ2qmHf1uL04OhXme1tJC1NutaM7PWiFGqezDXGqNRkQtot/tudhpt6K1dPqR/+n7yxERMfNg+W+4i1Fvt+zA1+kCbur2TPR/dis5PRtzs9GcP/1zGu6ii7hJGuZNjHq7Fce9gxsV702dnpUJ+KKPk623b6X81sqqTs9KBHyR6VtcpF3HEwbTs+IBn7f/XoeLNNNTwKVOIMZxkWZ6CnjkE3iUF2nF9CxiLKZnMUkR8Eh34GEu0orpefa/8mJ6FtMUAY/lBGLQRZrpSYqA7zx6GM27c6Yngy/kM9zMA/9cFf0KEDAIGASMgEHAIGAQMAIGAYOAQcAIGAQMAkbAIGAQMAgYAYOAQcAgYAQMAgYBg4ARMAgYLucPyoKxmnmaXKEAAAAASUVORK5CYII="
+                        class="" style="max-width: 40px; max-height: 40px; margin-bottom: 10px;">
+                    <p><span title="Download Lenovo Vantage">Download Lenovo Vantage</span>
+                        <span title="" tabindex="0" class="i">a</span>
+                    </p>
+                </a></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
