@@ -1,0 +1,56 @@
+
+PUT /eservice_adobe_hits_1_test
+
+DELETE /eservice_adobe_hits_lenovoglobal_20221031-000000-test
+
+GET /eservice_adobe_hits*/_search?size=3&track_total_hits=true
+
+POST /eservice_adobe_hits/_search?size=0&q=geo_city:(/bangalore.*/i)
+{
+  "aggs": {
+    "my-agg-name": {
+      "terms": {
+        "field": "geo_city"
+      }
+    }
+  }
+}
+
+POST /eservice_adobe_hits/_search?size=0&q=geo_city-runtiom:("MUMBAITEST")
+{ "runtime_mappings": {
+    "geo_city-runtiom": {
+      "type": "keyword",
+      "script": {
+        "source": "emit((doc['geo_city'].size()!=0?doc['geo_city'].value+'test':'test').toUpperCase())"
+      }
+    }
+  },
+  "aggs": {
+    "my_doubled_field": {
+      "terms": {
+        "field": "geo_city-runtiom"
+      }
+    }
+  }
+}
+
+GET /eservice_adobe_hits_*/_search?size=3
+
+POST /eservice_adobe_hits/_close
+
+POST /eservice_adobe_hits/_open
+
+GET /eservice_adobe_hits/_settings
+
+GET /eservice_adobe_hits*/_mapping
+
+POST /eservice_adobe_hits_202011011502/_doc
+{
+  "post_user_server":"zh",
+  "date_time":"2022-11-04 07:05:11"
+  
+}
+
+GET _template/eservice
+
+GET _template/eservice_adobe_hits_template

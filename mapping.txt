@@ -1,0 +1,154 @@
+
+POST INDEX/_close
+PUT INDEX/_settings
+{
+  "settings": {
+    "analysis": {
+      "normalizer": {
+        "lowercase_normalizer": {
+          "type": "custom",
+          "char_filter": [],
+          "filter": ["lowercase", "asciifolding"]
+        }
+      }
+    }
+  }
+  
+}
+POST INDEX/_open
+
+_date_second_format
+{
+  "properties": {
+    "_date_second_format": {
+      "type": "date",
+      "format": "yyyy-MM-dd HH:mm:ss",
+      "ignore_malformed": true
+    }
+  }
+}
+
+
+_integer
+{
+  "properties": {
+    "_integer": {
+      "type": "integer",
+      "ignore_malformed": true
+    }
+  }
+}
+
+
+_long
+{
+  "properties": {
+    "_long": {
+      "type": "long",
+      "ignore_malformed": true
+    }
+  }
+}
+
+
+_date_epoch_second
+{
+  "properties": {
+    "_date_epoch_second": {
+      "type": "date",
+      "format": "epoch_second",
+      "ignore_malformed": true
+    }
+  }
+}
+
+
+_keyword256
+{
+  "properties": {
+    "_keyword256": {
+      "ignore_above": 256,
+      "type": "keyword"
+    }
+  }
+}
+
+
+_keyword5000
+{
+  "properties": {
+    "_keyword5000": {
+      "ignore_above": 5000,
+      "type": "keyword"
+    }
+  }
+}
+
+
+_keyword256_and_lower
+{
+  "properties": {
+    "_keyword256_and_lower": {
+      "ignore_above": 256,
+      "type": "keyword",
+      "fields": {
+        "lower": {
+          "type": "keyword",
+          "ignore_above": 256,
+          "normalizer": "lowercase_normalizer"
+        }
+      }
+    }
+  }
+}
+
+_keyword256_ignore_uplowcase
+{
+  "properties": {
+    "_keyword256_ignore_uplowcase": {
+      "type": "keyword",
+      "ignore_above": 256,
+      "normalizer": "lowercase_normalizer"
+    }
+  }
+}
+
+
+_text_and_keyword5000
+{
+  "properties": {
+    "_text_and_keyword5000": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 5000
+        }
+      }
+    }
+  }
+}
+
+
+_ip
+{
+  "properties": {
+    "_ip": {
+      "type": "ip",
+      "ignore_malformed": true
+    }
+  }
+}
+
+
+
+_keyword5000_ignore_uplowcase
+{
+  "properties": {
+    "_keyword5000_ignore_uplowcase": {
+      "type": "keyword",
+      "ignore_above": 5000,
+      "normalizer": "lowercase_normalizer"
+    }
+  }
+}

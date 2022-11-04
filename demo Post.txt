@@ -1,0 +1,39 @@
+Request:POST 
+Host: glapi.lenovouat.com
+Path:/router/v2/opensearch/api/v1/index/data/upsert 
+Header:[Accept: application/json, application/*+json, Content-Type: application/json, appId: 200, token: e007551f-67b7-4917-8287-00053b763a65]
+Data:
+ {
+	"data": [{
+		"id": "article.us.en.360015721920",
+		"_lang": "en",
+		"language": "en",
+		"country": "us",
+		"source_type": "Article",
+		"parent_id": 4418921916178,
+		"source_id": 360015721920,
+		"source_model": {
+			"id": 360015721920,
+			"name": "Offers and bundles with multiple billing cycles",
+			"title": "Offers and bundles with multiple billing cycles",
+			"description": null,
+			"position": 2,
+			"created_at": "2020-08-06T05:10:52Z",
+			"updated_at": "2022-03-01T14:33:02Z",
+			"locale": "en-us",
+			"source_locale": "en-us",
+			"outdated": false,
+			"html_url": "https://support.appxite.com/hc/en-us/articles/360015721920-Offers-and-bundles-with-multiple-billing-cycles",
+			"edited_at": "2022-03-01T14:33:02Z",
+			"label_names": [],
+			"promoted": false,
+			"draft": false,
+			"vote_sum": 0,
+			"vote_count": 0,
+			"section_id": 4418921916178,
+			"body": "<p class=\"wysiwyg-text-align-justify\">Seller Admins and Account Manager can see detailed summary of recurring payments for the services before and after purchase. When a bundle, a cart, or a subscription contains offers with different billing cycles, the user will see the totals per each billing cycle selected. Example: EUR 200 once, EUR 50 monthly, and 700 yearly.</p>\n<p class=\"wysiwyg-text-align-justify\">When viewing cart, order, or quote in the platform or email, prices for items will be shown for each billing cycle, to see the total payment for every month, year.<br>Offers and bundles with several billing types/cycles, the price is hidden. Totals are presented in the following way for different offer types: </p>\n<p><img src=\"https://support.appxite.com/hc/article_attachments/360015198079/now_1.png\" alt=\"now_1.png\"></p>"
+		},
+		"order": 2,
+		"index_version": "2022050300"
+	}]
+}
