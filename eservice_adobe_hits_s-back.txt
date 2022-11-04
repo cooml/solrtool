@@ -1,0 +1,4717 @@
+
+PUT /eservice_adobe_hits_1
+
+DELETE /eservice_adobe_hits_202011011503
+
+GET /eservice_adobe_hits_*/_search?size=3
+
+GET /eservice_adobe_hits_20201101/_search?size=3
+
+POST /eservice_adobe_hits/_close
+
+POST /eservice_adobe_hits/_open
+
+GET /eservice_adobe_hits/_settings
+
+GET /eservice_adobe_hits*/_mapping
+
+POST /eservice_adobe_hits_202011011502/_doc
+{
+  "post_user_server":"zh",
+  "date_time":"2022-11-04 07:05:11"
+  
+}
+
+GET _template/eservice
+
+GET _template/eservice_adobe_hits_template
+
+PUT _template/eservice_adobe_hits_template
+{
+	"index_patterns": ["eservice_adobe_hits*"],
+	"aliases": {
+		"eservice_adobe_hits": {}
+	},
+	"settings": {
+		"analysis": {
+			"normalizer": {
+				"lowercase_normalizer": {
+					"type": "custom",
+					"char_filter": [],
+					"filter": ["lowercase", "asciifolding"]
+				}
+			}
+		}
+	},
+	"mappings": {
+		"dynamic": "true",
+		"dynamic_templates": [{
+				"_l": {
+					"match": "*_l",
+					"mapping": {
+						"type": "long"
+					}
+				}
+			},
+			{
+				"_d": {
+					"match": "*_d",
+					"mapping": {
+						"type": "double"
+					}
+				}
+			},
+			{
+				"_f": {
+					"match": "*_f",
+					"mapping": {
+						"type": "float"
+					}
+				}
+			},
+			{
+				"_obj": {
+					"match": "*_obj",
+					"mapping": {
+						"type": "object"
+					}
+				}
+			},
+			{
+				"_dt": {
+					"match": "*_dt",
+					"mapping": {
+						"type": "date"
+					}
+				}
+			},
+			{
+				"_point": {
+					"match": "*_point",
+					"mapping": {
+						"type": "geo_point"
+					}
+				}
+			},
+			{
+				"_k": {
+					"match": "*_k",
+					"mapping": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			},
+			{
+				"_s": {
+					"match": "*_s",
+					"mapping": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			},
+			{
+				"_txt": {
+					"match": "*_txt",
+					"mapping": {
+						"type": "text"
+					}
+				}
+			}
+		],
+		"properties": {
+			"accept_language": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"browser": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"browser_height": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"browser_width": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"c_color": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"campaign": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"carrier": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"channel": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"code_ver": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"color": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"connection_type": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"cookies": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"country": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"ct_connect_type": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"curr_factor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"currency": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"cust_hit_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"cust_visid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"daily_visitor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"date_time": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"domain": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"duplicate_events": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"duplicate_purchase": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"duplicated_from": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"ef_id": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"event_list": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"exclude_hit": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"first_hit_page_url": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"first_hit_pagename": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"first_hit_ref_domain": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"first_hit_ref_type": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"first_hit_referrer": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"first_hit_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"geo_city": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"geo_country": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"geo_dma": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"geo_region": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"geo_zip": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"hier1": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"hier2": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"hier3": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"hier4": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"hier5": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"hit_source": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"hit_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"hitid_high": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"hitid_low": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"hourly_visitor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"ip": {
+				"type": "ip",
+				"ignore_malformed": true
+			},
+			"ipv6": {
+				"type": "ip",
+				"ignore_malformed": true
+			},
+			"j_jscript": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"java_enabled": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"javascript": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"language": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"last_hit_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"last_purchase_num": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"last_purchase_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"latlon1": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"latlon23": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"latlon45": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"mc_audiences": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mcvisid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"monthly_visitor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"mvvar1": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mvvar1_instances": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mvvar2": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mvvar2_instances": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mvvar3": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mvvar3_instances": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"mvvar4": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"new_visit": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"os": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"page_event": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"page_event_var1": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"page_event_var2": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"page_type": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"page_url": {
+				"ignore_above": 5000,
+				"type": "keyword"
+			},
+			"pagename": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"paid_search": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"persistent_cookie": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"pointofinterest": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"pointofinterestdistance": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_browser_height": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"post_browser_width": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"post_campaign": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_channel": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_clickmaplink": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_clickmaplinkbyregion": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_clickmappage": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_clickmapregion": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_cookies": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_currency": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_cust_hit_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"post_cust_visid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_ef_id": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar1": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar10": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar100": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar101": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar102": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar103": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar104": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar105": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar106": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar107": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar108": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar109": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar11": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar110": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar111": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar112": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar113": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar114": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar115": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar116": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar117": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar118": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar119": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar12": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar120": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar121": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar122": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar123": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar124": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar125": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar126": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar127": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar128": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar129": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar13": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar130": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar131": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar132": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar133": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar134": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar135": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar136": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar137": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar138": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar139": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar14": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar140": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar141": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar142": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar143": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar144": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar145": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar146": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar147": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar148": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar149": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar15": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar150": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar151": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar152": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar153": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar154": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar155": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar156": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar157": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar158": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar159": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar16": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar160": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar161": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar162": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar163": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar164": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar165": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar166": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar167": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar168": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar169": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar17": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar170": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar171": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar172": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar173": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar174": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar175": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar176": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar177": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar178": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar179": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar18": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar180": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar181": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar182": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar183": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar184": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar185": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar186": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar187": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar188": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar189": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar19": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar190": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar191": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar192": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar193": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar194": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar195": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar196": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar197": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar198": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar199": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar2": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar20": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar200": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar201": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar202": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar203": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar204": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar205": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar206": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar207": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar208": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar209": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar21": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar210": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar211": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar212": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar213": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar214": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar215": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar216": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar217": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar218": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar219": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar22": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar220": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar221": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar222": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar223": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar224": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar225": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar226": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar227": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar228": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar229": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar23": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar230": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar231": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar232": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar233": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar234": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar235": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar236": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar237": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar238": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar239": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar24": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar240": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar241": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar242": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar243": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar244": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar245": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar246": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar247": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar248": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar249": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar25": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar250": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar26": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar27": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar28": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar29": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar3": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar30": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar31": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar32": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar33": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar34": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar35": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar36": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar37": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar38": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar39": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar4": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar40": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar41": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar42": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar43": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar44": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar45": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar46": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar47": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar48": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar49": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar5": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar50": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar51": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar52": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar53": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar54": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar55": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar56": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar57": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar58": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar59": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar6": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar60": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar61": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar62": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar63": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar64": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar65": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar66": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar67": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar68": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar69": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar7": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar70": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar71": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar72": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar73": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar74": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar75": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar76": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar77": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar78": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar79": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar8": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar80": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar81": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar82": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar83": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar84": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar85": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar86": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar87": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar88": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar89": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar9": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar90": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar91": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar92": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar93": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar94": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar95": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar96": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar97": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar98": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_evar99": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_event_list": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_hier1": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_hier2": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_hier3": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_hier4": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_hier5": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_java_enabled": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_mc_audiences": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_mvvar1": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_mvvar1_instances": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_mvvar2": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_mvvar2_instances": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_mvvar3": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_mvvar3_instances": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_page_event": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"post_page_event_var1": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_page_event_var2": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_page_type": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_page_url": {
+				"ignore_above": 5000,
+				"type": "keyword"
+			},
+			"post_pagename": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_persistent_cookie": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_pointofinterest": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_pointofinterestdistance": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_product_list": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_prop1": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop10": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop11": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop12": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop13": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop14": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop15": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop16": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop17": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop18": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop19": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop2": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop20": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop21": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop22": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop23": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop24": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop25": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop26": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop27": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop28": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop29": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop3": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop30": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop31": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop32": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop33": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop34": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop35": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop36": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop37": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop38": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop39": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop4": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop40": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop41": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop42": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop43": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop44": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop45": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop46": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop47": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop48": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop49": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop5": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop50": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop51": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop52": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop53": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop54": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop55": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop56": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop57": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop58": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop59": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop6": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop60": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop61": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop62": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop63": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop64": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop65": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop66": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop67": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop68": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop69": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop7": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop70": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop71": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop72": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop73": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop74": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop75": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop8": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_prop9": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_purchaseid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_referrer": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_s_kwcid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_search_engine": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"post_state": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_t_time_info": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_tnt": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_tnt_action": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_transactionid": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"post_user_server": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"post_visid_high": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"post_visid_low": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"post_visid_type": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"post_zip": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"product_list": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"purchaseid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"quarterly_visitor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"ref_domain": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"ref_type": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"referrer": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"resolution": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"s_kwcid": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"s_resolution": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"search_engine": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"search_page_num": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"secondary_hit": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"state": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"stats_server": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"t_time_info": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"tnt": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"tnt_action": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"transactionid": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"truncated_hit": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"user_agent": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"user_hash": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 5000
+					}
+				}
+			},
+			"user_server": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"userid": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"username": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"va_closer_detail": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"va_closer_id": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"va_finder_detail": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"va_finder_id": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"va_instance_event": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"va_new_engagement": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"visid_high": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"visid_low": {
+				"type": "long",
+				"ignore_malformed": true
+			},
+			"visid_new": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visid_timestamp": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"visid_type": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"visit_keywords": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_num": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"visit_page_num": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"visit_ref_domain": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_ref_type": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"visit_referrer": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_search_engine": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"visit_start_page_url": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_start_pagename": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_start_time_gmt": {
+				"type": "date",
+				"format": "yyyy-MM-dd HH:mm:ss",
+				"ignore_malformed": true
+			},
+			"weekly_visitor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"yearly_visitor": {
+				"type": "integer",
+				"ignore_malformed": true
+			},
+			"zip": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"browser_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"connection_type_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"country_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"javascript_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"language_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"os_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"ref_type_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"resolution_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"search_engine_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"color_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_id": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visitor_id": {
+				"ignore_above": 256,
+				"type": "keyword"
+			},
+			"visit_search_engine_name": {
+				"ignore_above": 256,
+				"type": "keyword"
+			}
+		}
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PUT /eservice_adobe_hits/_settings
+{
+  "settings": {
+    "analysis": {
+      "normalizer": {
+        "lowercase_normalizer": {
+          "type": "custom",
+          "char_filter": [],
+          "filter": ["lowercase", "asciifolding"]
+        }
+      }
+    }
+  }
+  
+}
+
+PUT /eservice_adobe_hits/_mapping
+{
+	"dynamic": "true",
+	"dynamic_templates": [{
+			"_l": {
+				"match": "*_l",
+				"mapping": {
+					"type": "long"
+				}
+			}
+		},
+		{
+			"_d": {
+				"match": "*_d",
+				"mapping": {
+					"type": "double"
+				}
+			}
+		},
+		{
+			"_f": {
+				"match": "*_f",
+				"mapping": {
+					"type": "float"
+				}
+			}
+		},
+		{
+			"_obj": {
+				"match": "*_obj",
+				"mapping": {
+					"type": "object"
+				}
+			}
+		},
+		{
+			"_dt": {
+				"match": "*_dt",
+				"mapping": {
+					"type": "date"
+				}
+			}
+		},
+		{
+			"_point": {
+				"match": "*_point",
+				"mapping": {
+					"type": "geo_point"
+				}
+			}
+		},
+		{
+			"_k": {
+				"match": "*_k",
+				"mapping": {
+					"ignore_above": 256,
+					"type": "keyword"
+				}
+			}
+		},
+		{
+			"_s": {
+				"match": "*_s",
+				"mapping": {
+					"ignore_above": 256,
+					"type": "keyword"
+				}
+			}
+		},
+		{
+			"_txt": {
+				"match": "*_txt",
+				"mapping": {
+					"type": "text"
+				}
+			}
+		}
+	],
+	"properties": {
+		"accept_language": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"browser": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"browser_height": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"browser_width": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"c_color": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"campaign": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"carrier": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"channel": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"code_ver": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"color": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"connection_type": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"cookies": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"country": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"ct_connect_type": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"curr_factor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"currency": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"cust_hit_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"cust_visid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"daily_visitor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"date_time": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"domain": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"duplicate_events": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"duplicate_purchase": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"duplicated_from": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"ef_id": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"event_list": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"exclude_hit": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"first_hit_page_url": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"first_hit_pagename": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"first_hit_ref_domain": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"first_hit_ref_type": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"first_hit_referrer": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"first_hit_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"geo_city": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"geo_country": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"geo_dma": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"geo_region": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"geo_zip": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"hier1": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"hier2": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"hier3": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"hier4": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"hier5": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"hit_source": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"hit_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"hitid_high": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"hitid_low": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"hourly_visitor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"ip": {
+			"type": "ip",
+			"ignore_malformed": true
+		},
+		"ipv6": {
+			"type": "ip",
+			"ignore_malformed": true
+		},
+		"j_jscript": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"java_enabled": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"javascript": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"language": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"last_hit_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"last_purchase_num": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"last_purchase_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"latlon1": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"latlon23": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"latlon45": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"mc_audiences": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mcvisid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"monthly_visitor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"mvvar1": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mvvar1_instances": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mvvar2": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mvvar2_instances": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mvvar3": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mvvar3_instances": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"mvvar4": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"new_visit": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"os": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"page_event": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"page_event_var1": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"page_event_var2": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"page_type": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"page_url": {
+			"ignore_above": 5000,
+			"type": "keyword"
+		},
+		"pagename": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"paid_search": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"persistent_cookie": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"pointofinterest": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"pointofinterestdistance": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_browser_height": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"post_browser_width": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"post_campaign": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_channel": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_clickmaplink": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_clickmaplinkbyregion": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_clickmappage": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_clickmapregion": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_cookies": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_currency": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_cust_hit_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"post_cust_visid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_ef_id": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar1": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar10": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar100": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar101": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar102": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar103": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar104": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar105": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar106": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar107": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar108": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar109": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar11": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar110": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar111": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar112": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar113": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar114": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar115": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar116": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar117": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar118": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar119": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar12": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar120": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar121": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar122": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar123": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar124": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar125": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar126": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar127": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar128": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar129": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar13": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar130": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar131": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar132": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar133": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar134": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar135": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar136": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar137": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar138": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar139": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar14": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar140": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar141": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar142": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar143": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar144": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar145": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar146": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar147": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar148": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar149": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar15": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar150": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar151": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar152": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar153": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar154": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar155": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar156": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar157": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar158": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar159": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar16": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar160": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar161": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar162": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar163": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar164": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar165": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar166": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar167": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar168": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar169": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar17": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar170": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar171": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar172": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar173": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar174": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar175": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar176": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar177": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar178": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar179": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar18": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar180": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar181": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar182": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar183": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar184": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar185": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar186": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar187": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar188": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar189": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar19": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar190": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar191": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar192": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar193": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar194": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar195": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar196": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar197": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar198": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar199": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar2": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar20": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar200": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar201": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar202": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar203": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar204": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar205": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar206": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar207": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar208": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar209": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar21": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar210": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar211": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar212": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar213": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar214": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar215": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar216": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar217": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar218": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar219": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar22": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar220": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar221": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar222": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar223": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar224": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar225": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar226": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar227": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar228": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar229": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar23": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar230": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar231": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar232": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar233": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar234": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar235": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar236": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar237": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar238": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar239": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar24": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar240": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar241": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar242": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar243": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar244": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar245": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar246": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar247": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar248": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar249": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar25": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar250": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar26": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar27": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar28": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar29": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar3": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar30": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar31": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar32": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar33": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar34": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar35": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar36": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar37": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar38": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar39": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar4": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar40": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar41": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar42": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar43": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar44": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar45": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar46": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar47": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar48": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar49": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar5": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar50": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar51": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar52": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar53": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar54": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar55": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar56": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar57": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar58": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar59": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar6": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar60": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar61": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar62": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar63": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar64": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar65": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar66": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar67": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar68": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar69": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar7": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar70": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar71": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar72": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar73": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar74": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar75": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar76": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar77": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar78": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar79": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar8": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar80": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar81": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar82": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar83": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar84": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar85": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar86": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar87": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar88": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar89": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar9": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar90": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar91": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar92": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar93": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar94": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar95": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar96": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar97": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar98": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_evar99": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_event_list": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_hier1": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_hier2": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_hier3": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_hier4": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_hier5": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_java_enabled": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_mc_audiences": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_mvvar1": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_mvvar1_instances": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_mvvar2": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_mvvar2_instances": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_mvvar3": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_mvvar3_instances": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_page_event": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"post_page_event_var1": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_page_event_var2": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_page_type": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_page_url": {
+			"ignore_above": 5000,
+			"type": "keyword"
+		},
+		"post_pagename": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_persistent_cookie": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_pointofinterest": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_pointofinterestdistance": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_product_list": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_prop1": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop10": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop11": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop12": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop13": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop14": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop15": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop16": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop17": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop18": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop19": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop2": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop20": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop21": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop22": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop23": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop24": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop25": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop26": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop27": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop28": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop29": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop3": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop30": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop31": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop32": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop33": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop34": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop35": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop36": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop37": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop38": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop39": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop4": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop40": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop41": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop42": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop43": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop44": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop45": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop46": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop47": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop48": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop49": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop5": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop50": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop51": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop52": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop53": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop54": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop55": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop56": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop57": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop58": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop59": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop6": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop60": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop61": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop62": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop63": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop64": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop65": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop66": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop67": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop68": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop69": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop7": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop70": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop71": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop72": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop73": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop74": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop75": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop8": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_prop9": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_purchaseid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_referrer": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_s_kwcid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_search_engine": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"post_state": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_t_time_info": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_tnt": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_tnt_action": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_transactionid": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"post_user_server": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"post_visid_high": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"post_visid_low": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"post_visid_type": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"post_zip": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"product_list": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"purchaseid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"quarterly_visitor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"ref_domain": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"ref_type": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"referrer": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"resolution": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"s_kwcid": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"s_resolution": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"search_engine": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"search_page_num": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"secondary_hit": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"state": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"stats_server": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"t_time_info": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"tnt": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"tnt_action": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"transactionid": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"truncated_hit": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"user_agent": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"user_hash": {
+			"type": "text",
+			"fields": {
+				"keyword": {
+					"type": "keyword",
+					"ignore_above": 5000
+				}
+			}
+		},
+		"user_server": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"userid": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"username": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"va_closer_detail": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"va_closer_id": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"va_finder_detail": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"va_finder_id": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"va_instance_event": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"va_new_engagement": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"visid_high": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"visid_low": {
+			"type": "long",
+			"ignore_malformed": true
+		},
+		"visid_new": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"visid_timestamp": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"visid_type": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"visit_keywords": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"visit_num": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"visit_page_num": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"visit_ref_domain": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"visit_ref_type": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"visit_referrer": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"visit_search_engine": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"visit_start_page_url": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"visit_start_pagename": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"visit_start_time_gmt": {
+			"type": "date",
+			"format": "yyyy-MM-dd HH:mm:ss",
+			"ignore_malformed": true
+		},
+		"weekly_visitor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"yearly_visitor": {
+			"type": "integer",
+			"ignore_malformed": true
+		},
+		"zip": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"browser_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"connection_type_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"country_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"javascript_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"language_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"os_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"ref_type_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"resolution_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"search_engine_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		},
+		"color_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		}
+		,
+		"visit_id": {
+			"ignore_above": 256,
+			"type": "keyword"
+		}
+		,
+		"visitor_id": {
+			"ignore_above": 256,
+			"type": "keyword"
+		}
+		,
+		"visit_search_engine_name": {
+			"ignore_above": 256,
+			"type": "keyword"
+		}
+	}
+}

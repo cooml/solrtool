@@ -1,0 +1,20 @@
+
+POST /eservice_adobe_hits/_close
+
+PUT /eservice_adobe_hits/_settings
+{
+  "settings": {
+    "analysis": {
+      "normalizer": {
+        "lowercase_normalizer": {
+          "type": "custom",
+          "char_filter": [],
+          "filter": ["lowercase", "asciifolding"]
+        }
+      }
+    }
+  }
+  
+}
+
+POST /eservice_adobe_hits/_open

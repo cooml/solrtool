@@ -1,0 +1,144 @@
+{
+  "runtime_mappings": {
+    "my_doubled_field": {
+      "type": "date",
+      "script": {
+        "source": "emit((doc['hit_time_gmt'].size()!=0?doc['hit_time_gmt'].value*1000:-28800))"
+      }
+    }
+  },
+  "query": {
+    "match_all": {}
+  },
+  "fields": [
+    {
+      "field": "my_doubled_field",
+      "format": "yyyy-MM-dd HH:mm:ss"
+    },
+    {
+      "field": "SourceType.keyword"
+    }
+  ]
+}
+
+
+
+{
+  "properties": {
+    "hit_time_gmt": {
+      "type": "long",
+      "fields": {
+        "hit_time_gmt_date": {
+          "type": "date",
+          "format": "epoch_second"
+        }
+      }
+    },
+    "ip": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "_ip": {
+          "type": "ip",
+          "ignore_malformed": true
+        }
+      }
+    },
+    "ipv6": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "_ip": {
+          "type": "ip",
+          "ignore_malformed": true
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+POST /eservice_adobe_hits/_doc
+{
+  "hit_time_gmt": 1667384415
+  
+}
+
+
+GET /eservice_adobe_hits/_search?size=1
+
+PUT /eservice_adobe_hits/_mapping
+{
+  "properties": {
+    "hit_time_gmt": {
+      "type": "long",
+      "fields": {
+        "hit_time_gmt_date": {
+          "type": "date",
+          "format": "epoch_second"
+        }
+      }
+    }
+  }
+}
+
+PUT /eservice_adobe_hits
+
+GET /eservice_adobe_hits/_mapping
+
+GET /eservice_adobe_hits/_search?size=1
+
+PUT /eservice_adobe_hits/_mapping
+{
+  "properties": {
+    "hit_time_gmt": {
+      "type": "long",
+      "fields": {
+        "hit_time_gmt_date": {
+          "type": "date",
+          "format": "epoch_second"
+        }
+      }
+    },
+    "ip": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "_ip": {
+          "type": "ip",
+          "ignore_malformed": true
+        }
+      }
+    },
+    "ipv6": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "_ip": {
+          "type": "ip",
+          "ignore_malformed": true
+        }
+      }
+    }
+  }
+}
